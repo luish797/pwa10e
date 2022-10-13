@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PWA - 06/10/22</title>
+        <meta charset="utf-8">
+        <link rel="manifest" href="manifiesto.json">
+    </head>
+    <body>
+        <img src="descarga.png">
+        <div id="contenido">
+
+        </div>
+        <script src="script.js"></script>
+        <!-- http://localhost:8080/sd10d22/oct3/pwa1/index.html -->
+        <script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('sw.js')
+                .then(
+                    function(registration){
+                        alert('Reg. satisfactorio del sw');
+                        console.log('Reg. satisfactorio del sw en el ámbito: ',
+                                    registration.scope);
+                    }
+                ).catch(
+                    function(err){
+                        alert('El SW no se registró');
+                        console.log('El SW no se registró', err);
+                    }
+                );
+            }
+        </script>
+    </body>
+</html>
