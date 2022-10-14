@@ -11,7 +11,8 @@ self.addEventListener(
                     cache.addAll(
                         [
                             'script.js',
-                            'descarga.png'
+                            'descarga.png',
+                            './css/bootstrap.min.css'
                         ]
                     );        
                 }
